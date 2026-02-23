@@ -58,3 +58,27 @@ git push -u origin feature/day1-practice
 git checkout main
 git pull origin main
 ```
+
+
+## If you did it on GitHub website only (no local terminal)
+
+If you clicked buttons like **Update branch**, **Commit changes**, or **Create pull request** on GitHub, that's okay.
+
+- **Update branch**: brings your PR branch up to date with `main`.
+- **Commit changes** (on web editor): saves changes directly to the selected branch on GitHub.
+- **Create pull request**: asks to merge your branch into `main`.
+
+### Web-only flow (simple)
+1. Open file on GitHub and click the pencil icon (Edit).
+2. Make changes, then click **Commit changes**.
+3. Choose:
+   - **Create a new branch** (recommended), or
+   - commit directly to current branch.
+4. Click **Propose changes** / **Commit changes**.
+5. Click **Compare & pull request**.
+6. If GitHub shows **Update branch**, click it to sync with `main`.
+7. Click **Merge pull request** → **Confirm merge**.
+
+### Important
+- You do **not** need local terminal for the web-only flow.
+- Local commands (`git add`, `git commit`, `git push`) are just another way to do the same workflow.
