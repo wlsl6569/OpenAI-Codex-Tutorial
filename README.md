@@ -8,13 +8,14 @@ let's learn the basics of Codex
    - Important: start by making sure Codex is working on the correct repository before asking for changes.
 2. Open that same repository on GitHub and confirm you are in the right repo.
 3. Ask Codex for a simple code change.
-4. Apply the change in Codex/GitHub.
 
-5. How branches are split (easy explanation):
+4. How branches are split (easy explanation):
 - Think of each Codex task/conversation as working on a separate change line (branch).
 - `main` branch: original/stable project line.
 - `codex/...` or `feature/...` branch: temporary work line created for that specific change.
 - After the change is ready, you merge that branch back into `main` through a PR.
+
+5. From here, Steps 6-8 are the real "apply your change" flow on GitHub.
 
 6. Update your Codex/change branch first, then create PR:
 - On that Codex/change branch page, click `Update branch` first (if shown).
