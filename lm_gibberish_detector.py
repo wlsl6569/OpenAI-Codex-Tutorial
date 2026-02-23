@@ -118,6 +118,25 @@ def vowel_ratio(word: str) -> float:
     return vowels / len(word) if word else 0.0
 
 
+def max_consonant_cluster(word: str) -> int:
+    longest = 0
+    current = 0
+    for ch in word:
+        if ch in "aeiou":
+            current = 0
+        else:
+            current += 1
+            longest = max(longest, current)
+    return longest
+
+
+def repeated_char_ratio(word: str) -> float:
+    if not word:
+        return 0.0
+    repeats = sum(1 for i in range(1, len(word)) if word[i] == word[i - 1])
+    return repeats / max(1, len(word) - 1)
+
+
 def predict_word_or_gibberish(model: CharBigramLM, raw_text: str) -> Prediction:
     word = normalize(raw_text)
     if not word:
@@ -129,9 +148,17 @@ def predict_word_or_gibberish(model: CharBigramLM, raw_text: str) -> Prediction:
 
     score = model.normalized_score(word)
     ratio = vowel_ratio(word)
+    cluster = max_consonant_cluster(word)
+    repeat_ratio = repeated_char_ratio(word)
 
     # Lightweight heuristics over LM score.
-    likely_word = score > -4.2 and 0.15 <= ratio <= 0.8 and len(word) >= 2
+    likely_word = (
+        score > -4.2
+        and 0.15 <= ratio <= 0.8
+        and len(word) >= 2
+        and cluster <= 4
+        and repeat_ratio <= 0.35
+    )
 
     if likely_word:
         confidence = min(0.95, max(0.55, (score + 5.0) / 2.0))
