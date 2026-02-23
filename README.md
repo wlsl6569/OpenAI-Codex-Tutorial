@@ -23,6 +23,11 @@ A practical beginner tutorial for learning Codex, especially for AI-search and r
   - **Terminal** = the app/panel where you type commands.
   - **CLI** (Command Line Interface) = the command-based way of using tools inside that terminal.
   - If `pwd` output ends with your repo folder name (for example `.../OpenAI-Codex-Tutorial`), you are in the correct project folder.
+- Commit/Push/PR quick clarification (Korean):
+  - `git commit`: 내 컴퓨터(로컬 브랜치)에 변경 저장.
+  - `git push`: 로컬 커밋을 원격 저장소(GitHub 등)로 업로드.
+  - `PR (Pull Request)`: 내 브랜치 변경을 `main` 같은 기본 브랜치에 합쳐달라는 요청.
+  - PR은 자동 반영이 아니고, 리뷰/승인 후 merge 되어야 원본 브랜치에 반영됨.
 - Understand where files are and whether your working tree is clean.
 
 #### 2) Learn a good Codex prompt structure (15 min)
