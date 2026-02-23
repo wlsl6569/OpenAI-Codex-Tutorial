@@ -75,3 +75,29 @@ Write a short log:
 - **Day 5:** AI-search mini project.
 - **Day 6:** Reusable prompt patterns.
 - **Day 7:** Capstone + portfolio-ready output.
+
+## Simple Word vs Gibberish Detector
+
+I added a tiny character-level language model example:
+- File: `lm_gibberish_detector.py`
+- Purpose: classify input text as likely real word (`word`) or gibberish (`gibberish`)
+
+### Run
+
+```bash
+python lm_gibberish_detector.py hello qzxptx applle machine
+```
+
+### Example output
+
+```text
+hello           -> word      (confidence=0.98, score=0.000)
+qzxptx          -> gibberish (confidence=0.55, score=-4.022)
+applle          -> word      (confidence=0.95, score=-2.877)
+machine         -> word      (confidence=0.75, score=-3.510)
+```
+
+### Notes
+- This is a simple educational model, not production-grade NLP.
+- It uses character bigrams + basic heuristics.
+- If `/usr/share/dict/words` exists, it automatically uses it as extra training data.
