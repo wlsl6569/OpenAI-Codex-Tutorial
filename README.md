@@ -37,3 +37,56 @@ let's learn the basics of Codex
 - `Commit changes`: save edits to the selected branch.
 - `Update branch`: sync your branch with latest `main` before merge.
 - `Create pull request`: request merge of your branch into `main`.
+
+## DAY 2
+
+Today's goal:
+- Clone the project to your local computer.
+- Use terminal + Git commands to review files/changes received from Codex.
+- Run the project locally.
+
+1. Clone the repository to your local machine
+- Open terminal and move to your target folder:
+  - `cd path/to/your/folder`
+- Clone the GitHub repository:
+  - `git clone https://github.com/<username>/<repo>.git`
+- Move into the project directory:
+  - `cd <repo>`
+
+2. Check current repository state (branch + changes)
+- Check current branch:
+  - `git branch`
+- Check all branches (including remote):
+  - `git branch -a`
+- Check changed files/status:
+  - `git status`
+
+3. Review changes from Codex
+- Check recent commits:
+  - `git log --oneline --decorate --graph -n 10`
+- See which files were changed in a commit:
+  - `git show --name-only <commit-hash>`
+- Review code diff:
+  - `git show <commit-hash>`
+  - Or compare uncommitted local changes with: `git diff`
+
+4. Sync with remote updates
+- Fetch latest remote metadata:
+  - `git fetch`
+- Pull latest changes into your working branch:
+  - `git pull origin <branch-name>`
+
+5. Run the project (follow repository-specific instructions)
+- Install dependencies:
+  - Example: `npm install` or `pip install -r requirements.txt`
+- Run the app/script:
+  - Example: `npm run dev` or `python main.py`
+
+6. Quick checks before/after running
+- Before running: use `git status` to confirm no unexpected changes.
+- If errors happen: read terminal logs first.
+- If run succeeds: confirm behavior in terminal/browser output.
+
+7. Key takeaway
+- Flow: clone → check branch/status → inspect commit/diff → sync with pull → run.
+- Use Git commands to understand "what changed" before you execute.
